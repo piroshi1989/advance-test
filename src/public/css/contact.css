@@ -1,0 +1,41 @@
+
+.contact-form{
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__content{
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.section__title{
+    text-align: center;
+    font-weight:bold;
+}
+
+.form-table__group-title{
+    margin-left:0;
+    font-size:14px;
+}
+
+
+
+.form-table__input--name{
+    display: flex;
+}
+
+.form-table__label--required{
+    color:red;
+}
+
+.form-table__input--example{
+    color: grey;
+    font-size: 12px;
+}
+
+.form-button{
+    text-align: center;
+}
