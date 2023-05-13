@@ -1,0 +1,12 @@
+.thanks__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* 親要素の高さを指定 */
+}
+
+.thanks__message p {
+    text-align: center;
+    font-size:100px;
+}

@@ -45,4 +45,27 @@ class ValidationContact extends Component
 
         return view('confirm', compact('contact'));
     }
+
+    public function mount()
+{
+    $this->lastname = old('lastname');
+    $this->firstname = old('firstname');
+    $this->gender = old('gender');
+    $this->email = old('email');
+    $this->postcode = old('postcode');
+    $this->address = old('address');
+    $this->building_name = old('building_name');
+    $this->opinion = old('opinion');
+}
+
+public function submit()
+{
+    // フォームの送信処理
+
+    // フォームの送信後にリダイレクトして、プロパティをリセット
+    return redirect()->route('form')->withInput();
+}
+
+
+
 }

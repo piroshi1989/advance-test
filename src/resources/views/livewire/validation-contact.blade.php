@@ -1,7 +1,6 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
 </div>
-
 <div>
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
 </div>
@@ -62,9 +61,9 @@
                 </div>
                 </th>
                 <td class="form-table__item--gender">
-                    <div class="form-table__input--gender">
-                        <input type="radio" name="gender" value="1" checked>男性
-                        <input type="radio" name="gender" value="2">女性
+                    <div class="form-table__input--radio">
+                        <input type="radio" name="gender" value="1" wire:model="gender" checked>男性
+                        <input type="radio" name="gender" value="2" wire:model="gender">女性
                     </div>
                 </td>
             </tr>
@@ -80,7 +79,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--email">
-                    <div class="form-table__input--email">
+                    <div class="form-table__input">
                         <input type="email" name="email" wire:model=="email" value="{{ old('email') }}">
                         <p class="form-table__input--example">例) test@example.com</p>
                     </div>
@@ -109,12 +108,13 @@
                 </div>
                 </th>
                 <td class="form-table__item--postcode">
-                    <div class="form-table__input--postcode">
+                    <div class="form-table__input">
 
                         <span>〒</span>
-                        <input type="text" name="postcode" wire:model="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="{{ old('postcode') }}">
+                        <input type="text" name="postcode" od="postcode" wire:model="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="{{ old('postcode') }}">
                         <p class="form-table__input--example">例) 123-4567</p>
                     </div>
+
                 </td>
             </tr>
             {{-- バリデーション --}}
@@ -140,7 +140,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--address">
-                    <div class="form-table__input--address">
+                    <div class="form-table__input">
                         <input type="text" name="address" wire:model="address" value="{{ old('address') }}">
                         <p class="form-table__input--example">例) 東京都渋谷区千駄ヶ谷1-2-3</p>
                     </div>
@@ -167,7 +167,7 @@
                     <span class="form-table__lavel--building_name">建物名</span>
                 </th>
                 <td class="form-table__item--building_name">
-                    <div class="form-table__input--building_name">
+                    <div class="form-table__input">
                         <input type="text" name="building_name" wire:model="building_name" value="{{ old('building_name') }}">
                         <p class="form-table__input--example">例) 千駄ヶ谷マンション101</p>
                     </div>
@@ -196,7 +196,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--opinion">
-                    <div class="form-table__input--opinion">
+                    <div class="form-table__input--textarea">
                         <textarea name="opinion" wire:model="opinion">{{ old('opinion') }}
                         </textarea>
                     </div>
@@ -217,7 +217,7 @@
         {{-- ここまでテキストエリア --}}
         </table>
         {{-- 送信ボタン --}}
-        <div class= "form-button">
-            <button class="form-button__submit" type="submit">確認</button>
+        <div class= "form__button">
+            <button class="form__button-submit" type="submit">確認</button>
         </div>
     </form>

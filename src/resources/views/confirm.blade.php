@@ -22,7 +22,7 @@
                 </th>
                 <td class="form-table__item--name">
                     <div class="form-table__input--name">
-                    <div class="form-table__input--fullname">
+                    <div class="form-table__input">
                         <input type="text" name="fullname" value="{{ $contact['fullname']}}" readonly>
                     </div>
                     </div>
@@ -39,7 +39,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--gender">
-                    <div class="form-table__input--gender">
+                    <div class="form-table__input">
                         <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
                     </div>
                 </td>
@@ -55,7 +55,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--email">
-                    <div class="form-table__input--email">
+                    <div class="form-table__input">
                         <input type="email" name="email" value="{{ $contact['email'] }}" readonly>
                     </div>
                 </td>
@@ -71,7 +71,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--postcode">
-                    <div class="form-table__input--postcode">
+                    <div class="form-table__input">
                         <input type="text" name="postcode" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="{{ $contact['postcode'] }}" readonly>
                     </div>
                 </td>
@@ -87,7 +87,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--address">
-                    <div class="form-table__input--address">
+                    <div class="form-table__input">
                         <input type="text" name="address" value="{{ $contact['address'] }}" readonly>
                     </div>
                 </td>
@@ -102,7 +102,7 @@
                     <span class="form-table__lavel--building_name">建物名</span>
                 </th>
                 <td class="form-table__item--building_name">
-                    <div class="form-table__input--building_name">
+                    <div class="form-table__input">
                         <input type="text" name="building_name" value="{{ $contact['building_name'] }}" readonly>
                     </div>
                 </td>
@@ -118,7 +118,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--opinion">
-                    <div class="form-table__input--opinion">
+                    <div class="form-table__input">
                         <input type="text" name="opinion" value="{{ $contact['opinion'] }}" readonly>
                     </div>
                 </td>
@@ -127,11 +127,12 @@
         {{-- ここまでテキストエリア --}}
         </table>
         {{-- 送信ボタン --}}
-        <div class= "form-button">
-            <button class="form-button__submit" type="submit">送信</button>
+        <div class= "form__button">
+            <button class="form__button-submit" type="submit">送信</button>
         </div>
     </form>
-    <a class="form-correct" href="/contacts">修正する</a>
+    <a class="form-correct" href="javascript:history.back()">修正する</a>
+
 </div>
 </div>
 

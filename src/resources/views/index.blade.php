@@ -2,7 +2,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
-
+@section('content')
 <div class="search-form">
 <div class="search-form__content">
     <div class="section__title">
@@ -13,17 +13,15 @@
         @csrf
         <table class="form-table">
         <div class="form-table__group">
-            <tr class="form-table__row">
+            <tr class="form-table__row-first">
                 <th class="form-table__th">
                 <div class="form-table__group-title">
                     <span class="form-table__lavel--item">お名前</span>
                 </div>
                 </th>
                 <td class="form-table__item--name">
-                    <div class="form-table__input--name">
-                    <div class="form-table__input--name--fullname">
+                    <div class="form-table__input">
                         <input type="text" name="fullname" value="{{ old('fullname') }}">
-                    </div>
                     </div>
                 </td>
             </tr>
@@ -31,14 +29,14 @@
         {{-- ここまで名前 --}}
         {{-- 性別入力部分 --}}
         <div class="form-table__group">
-            <tr class="form-table__row">
+            <tr class="form-table__row-second">
                 <th class="form-table__th">
                 <div class="form-table__group-title">
                     <span class="form-table__lavel--item">性別</span>
                 </div>
                 </th>
                 <td class="form-table__item--gender">
-                    <div class="form-table__input--gender">
+                    <div class="form-table__input--radio">
                         <input type="radio" name="gender" value="all" checked>全て
                         <input type="radio" name="gender" value="1">男性
                         <input type="radio" name="gender" value="2">女性
@@ -56,11 +54,11 @@
                 </div>
                 </th>
                 <td class="form-table__item--date">
-                    <div class="form-table__input--date">
+                    <div class="form-table__input">
                         <input type="date" name="from">
                     </div>
-                    <p class="form-table__input--date">-</p>
-                    <div class="form-table__input--date">
+                    <p class="form-table__input-">-</p>
+                    <div class="form-table__input">
                         <input type="date" name="until">
                     </div>
                 </td>
@@ -76,7 +74,7 @@
                 </div>
                 </th>
                 <td class="form-table__item--email">
-                    <div class="form-table__input--email">
+                    <div class="form-table__input">
                         <input type="email" name="email" value={{ old('email') }}>
                     </div>
                 </td>
@@ -85,11 +83,11 @@
         {{-- ここまでemail --}}
         </table>
         {{-- 送信ボタン --}}
-        <div class= "form-button">
-            <button class="form-button__submit" type="submit">検索</button>
+        <div class= "form__button">
+            <button class="form__button-submit" type="submit">検索</button>
         </div>
-    </form>
     <a class="form-correct" href="/">リセット</a>
+    </form>
     </div>
 </div>
 </div>
@@ -137,7 +135,7 @@
             @csrf
             <div class="delete-form__button">
             <input type="hidden" name="id" value="{{ $contact['id'] }}">
-              <button class="delete-form__button-submit" type="submit">
+              <button class="form__button-submit" type="submit">
                 削除
               </button>
             </div>
@@ -147,3 +145,4 @@
     </table>
     {{ $contacts->links() }}
 </div>
+@endsection

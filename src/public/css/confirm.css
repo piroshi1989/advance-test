@@ -1,0 +1,29 @@
+.form-table__input input {
+    padding: 10px;
+    margin-top: 20px;
+    width: 600px;
+
+    appearance: none;
+    border:none;
+    font-size:18px;
+}
+
+.form-correct{
+    display: block;
+    color:black;
+    text-align: center;
+    margin-top:20px;
+}
+
+.form-table__th {
+    text-align: left;
+    padding-right:20px;
+}
+
+.form-table__group{
+    margin-bottom:20px;
+}
+
+.form-table{
+    margin-bottom:20px;
+}
