@@ -6,24 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 
-
 class ContactController extends Controller
 {
-    public function contacts(){
-        
+    public function contacts()
+    {
         return view('contact');
-    }
-
-    public function confirm(ContactRequest $request){
-        $contact = $request->only(['gender', 'email','postcode', 'address', 'building_name', 'opinion']);
-        
-        $name = $request->only(['lastname','firstname']);
-        $fullname=["fullname" => $name['lastname'] .$name['firstname']];
-
-        $contact = array_merge($contact, $fullname);
-
-        return view('confirm', compact('contact'));
-        
     }
 
     public function store(Request $request){
@@ -54,10 +41,11 @@ class ContactController extends Controller
         $from = $request->input('from');
         $until = $request->input('until');
         
-        $contacts = Contact::Contactsearch($fullname, $gender, $email, $from, $until)->get();
-        $contacts = Contact::Paginate(10);
+        $contacts = Contact::Contactsearch($fullname, $gender, $email, $from, $until)->Paginate(10);
 
-        return view('index', compact('contacts',));
+        $contacts->withQueryString();
+        
+        return view('index', compact('contacts'));
     }
 
 

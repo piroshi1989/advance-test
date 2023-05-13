@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ConfirmController;
+use App\Http\Livewire\ValidationContact;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\ConfirmController;
 */
 
 Route::get('/contacts',[ContactController::class,('contacts')]);
-Route::post('/contacts/confirm',[ContactController::class,('confirm')]);
+Route::post('/contacts/confirm',[ValidationContact::class,('confirm')]);
 Route::post('/contacts',[ContactController::class,('store')]);
 
 
